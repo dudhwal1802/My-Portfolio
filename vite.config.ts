@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
+import fs from "fs";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
@@ -11,7 +12,17 @@ export default defineConfig(({ mode }) => {
   // For custom domains, you typically want base = "/".
   // You can override by setting env var VITE_BASE (e.g. "/" or "/My-Portfolio/").
   const viteBaseOverride = process.env.VITE_BASE?.trim();
-  const defaultBase = mode === "production" && repoName ? `/${repoName}/` : "/";
+  const hasCustomDomain = fs.existsSync(path.resolve(__dirname, "public/CNAME"));
+
+  const defaultBase =
+    mode === "production"
+      ? hasCustomDomain
+        ? "/"
+        : repoName
+          ? `/${repoName}/`
+          : "/"
+      : "/";
+
   const base = viteBaseOverride ? viteBaseOverride : defaultBase;
 
   return {
