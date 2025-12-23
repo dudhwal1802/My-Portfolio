@@ -11,6 +11,13 @@ const AnimatedBackground = () => {
     if (!ctx) return;
 
     let animationFrameId: number;
+    const rootStyle = getComputedStyle(document.documentElement);
+    const primaryHsl = rootStyle.getPropertyValue('--primary').trim();
+    const [hRaw, sRaw, lRaw] = primaryHsl.split(/\s+/);
+    const hue = Number.parseFloat(hRaw || '213');
+    const sat = Number.parseFloat((sRaw || '94%').replace('%', ''));
+    const light = Number.parseFloat((lRaw || '52%').replace('%', ''));
+
     let particles: Array<{
       x: number;
       y: number;
@@ -58,7 +65,7 @@ const AnimatedBackground = () => {
         // Draw particle
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `hsla(174, 72%, 40%, ${particle.opacity})`;
+        ctx.fillStyle = `hsla(${hue}, ${sat}%, ${light}%, ${particle.opacity})`;
         ctx.fill();
 
         // Draw connections
@@ -71,7 +78,7 @@ const AnimatedBackground = () => {
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(otherParticle.x, otherParticle.y);
-            ctx.strokeStyle = `hsla(174, 72%, 40%, ${0.1 * (1 - distance / 120)})`;
+            ctx.strokeStyle = `hsla(${hue}, ${sat}%, ${light}%, ${0.12 * (1 - distance / 120)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
@@ -85,14 +92,16 @@ const AnimatedBackground = () => {
     createParticles();
     drawParticles();
 
-    window.addEventListener('resize', () => {
+    const handleResize = () => {
       resizeCanvas();
       createParticles();
-    });
+    };
+
+    window.addEventListener('resize', handleResize);
 
     return () => {
       cancelAnimationFrame(animationFrameId);
-      window.removeEventListener('resize', resizeCanvas);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
