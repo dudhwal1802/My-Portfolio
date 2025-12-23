@@ -46,8 +46,9 @@ const FloatingNav = () => {
       {sections.map((section) => (
         <button
           key={section.id}
+          type="button"
           onClick={() => scrollToSection(section.id)}
-          className="group relative flex items-center justify-end"
+          className="group relative flex items-center justify-end focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded"
           aria-label={`Navigate to ${section.label}`}
         >
           {/* Label tooltip */}

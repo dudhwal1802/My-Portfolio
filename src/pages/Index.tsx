@@ -13,7 +13,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <FloatingNav />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <HeroSection />
         <AboutSection />
         <SkillsSection />

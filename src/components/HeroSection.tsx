@@ -100,6 +100,10 @@ const HeroSection = () => {
               <img
                 src={profilePhoto}
                 alt="Chandrabhan - MCA Student & Developer"
+                width={384}
+                height={384}
+                loading="eager"
+                decoding="async"
                 className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full object-cover border-4 border-card shadow-xl"
               />
             </div>
