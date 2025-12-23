@@ -26,7 +26,7 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+        scrolled || isOpen
           ? 'bg-card/95 backdrop-blur-md shadow-card border-b border-border'
           : 'bg-transparent'
       }`}
@@ -79,7 +79,7 @@ const Navbar = () => {
             isOpen ? 'max-h-screen pb-6' : 'max-h-0'
           }`}
         >
-          <div className="flex flex-col gap-4 pt-4 border-t border-border">
+          <div className="flex flex-col gap-4 pt-4 border-t border-border bg-card/95 backdrop-blur-md">
             {navLinks.map((link) => (
               <a
                 key={link.href}
