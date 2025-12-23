@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import profilePhoto from '@/assets/profile-photo.jpeg';
 import Typewriter from '@/components/Typewriter';
 import AnimatedBackground from '@/components/AnimatedBackground';
+import { scrollToHash } from '@/lib/scroll';
 
 const HeroSection = () => {
   return (
@@ -47,7 +48,14 @@ const HeroSection = () => {
                 </a>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <a href="#contact">
+                <a
+                  href="#contact"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToHash('#contact', { durationMs: 350 });
+                    window.history.pushState(null, '', '#contact');
+                  }}
+                >
                   <Mail className="w-5 h-5" />
                   Get in Touch
                 </a>
@@ -114,6 +122,11 @@ const HeroSection = () => {
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in stagger-5 hidden lg:block">
           <a
             href="#about"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToHash('#about', { durationMs: 350 });
+              window.history.pushState(null, '', '#about');
+            }}
             className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
           >
             <span className="text-sm">Scroll to explore</span>

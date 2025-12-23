@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Download, Github, Linkedin, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { scrollToHash } from '@/lib/scroll';
 
 const navLinks = [
   { href: '#home', label: 'Home' },
@@ -47,6 +48,13 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleSectionSpy);
   }, []);
 
+  const handleNavClick = (hash: string) => (event: React.MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    setIsOpen(false);
+    scrollToHash(hash, { durationMs: 350 });
+    window.history.pushState(null, '', hash);
+  };
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -61,6 +69,7 @@ const Navbar = () => {
           {/* Logo */}
           <a
             href="#home"
+            onClick={handleNavClick('#home')}
             className="text-xl md:text-2xl font-bold text-foreground hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded"
           >
             Chandrabhan<span className="text-primary">.</span>
@@ -77,6 +86,7 @@ const Navbar = () => {
                 <a
                   key={link.href}
                   href={link.href}
+                  onClick={handleNavClick(link.href)}
                   aria-current={isActive ? 'page' : undefined}
                   className={`font-medium transition-colors relative group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded ${
                     isActive ? 'text-primary' : 'text-muted-foreground hover:text-primary'
@@ -129,7 +139,7 @@ const Navbar = () => {
               <a
                 key={link.href}
                 href={link.href}
-                onClick={() => setIsOpen(false)}
+                onClick={handleNavClick(link.href)}
                 aria-current={isActive ? 'page' : undefined}
                 className={`font-medium transition-colors py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded ${
                   isActive ? 'text-primary' : 'text-muted-foreground hover:text-primary'

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { scrollToHash } from '@/lib/scroll';
 
 const sections = [
   { id: 'home', label: 'Home' },
@@ -35,10 +36,8 @@ const FloatingNav = () => {
   }, []);
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    scrollToHash(`#${id}`, { durationMs: 350 });
+    window.history.pushState(null, '', `#${id}`);
   };
 
   return (
