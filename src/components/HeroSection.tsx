@@ -41,7 +41,7 @@ const HeroSection = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-8">
               <Button variant="hero" size="lg" asChild>
-                <a href="/Chandrabhan_Resume.pdf" download>
+                <a href={`${import.meta.env.BASE_URL}Chandrabhan_Resume.pdf`} download>
                   <Download className="w-5 h-5" />
                   Download Resume
                 </a>

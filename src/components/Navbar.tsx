@@ -56,7 +56,7 @@ const Navbar = () => {
               ))}
             </div>
             <Button variant="hero" size="default" asChild>
-              <a href="/Chandrabhan_Resume.pdf" download>
+              <a href={`${import.meta.env.BASE_URL}Chandrabhan_Resume.pdf`} download>
                 <Download className="w-4 h-4" />
                 Resume
               </a>
@@ -92,7 +92,7 @@ const Navbar = () => {
             ))}
             <div className="flex gap-3 pt-4">
               <Button variant="hero" size="default" className="flex-1" asChild>
-                <a href="/Chandrabhan_Resume.pdf" download>
+                <a href={`${import.meta.env.BASE_URL}Chandrabhan_Resume.pdf`} download>
                   <Download className="w-4 h-4" />
                   Resume
                 </a>
