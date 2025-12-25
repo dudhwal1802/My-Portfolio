@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Github, Linkedin, ExternalLink } from 'lucide-react';
+import { Mail, Phone, MapPin, Github, Linkedin, ExternalLink, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ScrollReveal from '@/components/ScrollReveal';
 
@@ -14,6 +14,12 @@ const contactInfo = [
     label: 'Phone',
     value: '+91 9660880910',
     href: 'tel:+919660880910',
+  },
+  {
+    icon: MessageCircle,
+    label: 'WhatsApp',
+    value: '+91 9660880910',
+    href: 'https://wa.me/919660880910',
   },
   {
     icon: MapPin,
