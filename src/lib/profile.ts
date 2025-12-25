@@ -121,10 +121,18 @@ export function getResumeUrl() {
   return `${import.meta.env.BASE_URL}Chandrabhan_Resume.pdf`;
 }
 
+export function getWhatsAppUrl(prefillText?: string) {
+  const base = PROFILE.contact.whatsappUrl;
+  const text = (prefillText ?? "").trim();
+  if (!text) return base;
+  return `${base}?text=${encodeURIComponent(text)}`;
+}
+
 export function getContactActions() {
+  const prefill = "Hi Chandrabhan, I visited your portfolio and would like to connect.";
   return [
     { label: "Phone Call", href: `tel:${PROFILE.contact.phoneE164}` },
-    { label: "WhatsApp", href: PROFILE.contact.whatsappUrl },
+    { label: "WhatsApp", href: getWhatsAppUrl(prefill) },
     { label: "LinkedIn", href: PROFILE.contact.linkedinUrl },
     { label: "Email", href: `mailto:${PROFILE.contact.email}` },
   ];
