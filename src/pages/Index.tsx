@@ -7,7 +7,6 @@ import CertificationsSection from '@/components/CertificationsSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import FloatingNav from '@/components/FloatingNav';
-import ChatbotWidget from '@/components/ChatbotWidget';
 
 const Index = () => {
   return (
@@ -23,7 +22,6 @@ const Index = () => {
         <ContactSection />
       </main>
       <Footer />
-      <ChatbotWidget />
     </div>
   );
 };

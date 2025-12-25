@@ -1,8 +1,9 @@
 import { Mail, Phone, MapPin, Github, Linkedin, ExternalLink } from 'lucide-react';
+import type { SVGProps } from 'react';
 import { Button } from '@/components/ui/button';
 import ScrollReveal from '@/components/ScrollReveal';
 
-const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
+const WhatsAppIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
     <path
       d="M12 2a9.5 9.5 0 0 0-8.17 14.33L3 22l5.86-1.76A9.5 9.5 0 1 0 12 2Z"
