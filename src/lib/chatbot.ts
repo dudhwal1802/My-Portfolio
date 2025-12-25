@@ -48,14 +48,13 @@ export function getInitialAssistantMessage(): ChatbotMessage {
     id: id(),
     role: "assistant",
     text:
-      "Namaste! I’m Chandrabhan’s portfolio assistant. Ask me about skills, projects, education, certifications, or choose a contact method to connect.",
+      "Welcome! I’m Chandrabhan’s portfolio assistant. Ask me about skills, projects, education, certifications, or how to contact Chandrabhan.",
     suggestions: [
       "What skills do you have?",
       "Show your projects",
       "What certifications do you have?",
       "How can I contact you?",
     ],
-    actions: sectionActions(),
     source: "General",
   };
 }
@@ -110,8 +109,7 @@ export function generateAssistantReply(
       id: id(),
       role: "assistant",
       text:
-        "Hi! I can answer about Chandrabhan’s skills, projects, education, certifications, and resume. Or you can choose a contact method to connect.",
-      actions: [...sectionActions(), ...getContactActions()],
+        "Hi! Ask me about Chandrabhan’s skills, projects, education, certifications, or contact details.",
       suggestions: ["Show your projects", "What skills do you have?", "How can I contact you?"],
       source: "General",
     };
@@ -153,14 +151,6 @@ export function generateAssistantReply(
   ]);
 
   if (hasAny(text, ["name", "who are you", "who r you", "who is", "about"])) {
-    const featureIdeas =
-      "Feature ideas you can add (no AI):\n" +
-      "• Auto-detect language (Hindi/English)\n" +
-      "• FAQ quick buttons (Resume/Skills/Projects/Contact)\n" +
-      "• WhatsApp message templates for different intents\n" +
-      "• Better accessibility (focus trap + screen reader labels)\n" +
-      "• Simple analytics: count intents (skills/projects/contact)";
-
     const summary =
       `Quick summary:\n` +
       `• Name: ${PROFILE.name}\n` +
@@ -169,7 +159,7 @@ export function generateAssistantReply(
       `• Interests: ${PROFILE.interests.join(", ")}`;
 
     const textOut = aboutSelfIntent
-      ? `${featureIdeas}\n\n${summary}`
+      ? summary
       : `${PROFILE.name} — ${PROFILE.headline}. Based in ${PROFILE.location.full}.`;
 
     const message: ChatbotMessage = {
@@ -177,7 +167,6 @@ export function generateAssistantReply(
       role: "assistant",
       text: textOut,
       suggestions: ["What skills do you have?", "Show your projects", "How can I contact you?"],
-      actions: sectionActions(),
       source: "About",
     };
     nextContext.lastTopic = "About";
@@ -301,7 +290,7 @@ export function generateAssistantReply(
       id: id(),
       role: "assistant",
       text: "Sure — you can message Chandrabhan on WhatsApp:",
-      actions: [{ label: "Open WhatsApp", href: getWhatsAppUrl("Hi Chandrabhan, I visited your portfolio and would like to connect.") }],
+      actions: [{ label: "Open WhatsApp", href: getWhatsAppUrl("Hello Chandrabhan") }],
       source: "Contact",
     };
     nextContext.lastTopic = "Contact";
@@ -319,7 +308,6 @@ export function generateAssistantReply(
       "What certifications do you have?",
       "How can I contact you?",
     ],
-    actions: [...sectionActions(), ...getContactActions()],
     source: "General",
   };
   return { message, nextContext, intent: "fallback" };

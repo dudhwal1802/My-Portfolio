@@ -27,7 +27,6 @@ const ChatbotWidget = () => {
 
   const scrollRef = React.useRef<HTMLDivElement | null>(null);
   const inputRef = React.useRef<HTMLInputElement | null>(null);
-  const closeTimerRef = React.useRef<number | null>(null);
 
   React.useEffect(() => {
     if (!isOpen) return;
@@ -46,31 +45,13 @@ const ChatbotWidget = () => {
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         e.preventDefault();
-        closeWithThanks();
+        setIsOpen(false);
       }
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen, messages.length]);
-
-  React.useEffect(() => {
-    return () => {
-      if (closeTimerRef.current) window.clearTimeout(closeTimerRef.current);
-    };
-  }, []);
-
-  function trackIntent(intent: string) {
-    try {
-      const key = "portfolio_chat_intents";
-      const raw = sessionStorage.getItem(key);
-      const parsed = raw ? (JSON.parse(raw) as Record<string, number>) : {};
-      parsed[intent] = (parsed[intent] ?? 0) + 1;
-      sessionStorage.setItem(key, JSON.stringify(parsed));
-    } catch {
-      // ignore
-    }
-  }
 
   function send(text: string) {
     const trimmed = text.trim();
@@ -90,44 +71,10 @@ const ChatbotWidget = () => {
     setIsTyping(true);
     window.setTimeout(() => {
       const { message, nextContext, intent } = generateAssistantReply(trimmed, ctx);
-      trackIntent(intent);
       setCtx(nextContext);
       setMessages((prev) => [...prev, message]);
       setIsTyping(false);
     }, 450);
-  }
-
-  function closeWithThanks() {
-    if (closeTimerRef.current) {
-      window.clearTimeout(closeTimerRef.current);
-      closeTimerRef.current = null;
-    }
-
-    if (!isOpen) return;
-
-    const last = messages[messages.length - 1];
-    const alreadyThanked = last?.role === "assistant" && /thanks|thank you|shukriya|dhanyavaad/i.test(last.text);
-
-    if (!alreadyThanked) {
-      setMessages((prev) => [
-        ...prev,
-        {
-          id: `${Date.now()}-thanks`,
-          role: "assistant",
-          text: "Thanks for visiting! If you want to connect, just pick a method — I’m here.",
-          actions: [
-            { label: "Go to Contact", href: "#contact" },
-            { label: "WhatsApp", href: "https://wa.me/919660880910?text=" + encodeURIComponent("Hi Chandrabhan, I visited your portfolio and would like to connect.") },
-          ],
-          source: "Contact",
-        },
-      ]);
-    }
-
-    closeTimerRef.current = window.setTimeout(() => {
-      setIsOpen(false);
-      closeTimerRef.current = null;
-    }, 2000);
   }
 
   function onActionClick(href: string, e: React.MouseEvent) {
@@ -151,7 +98,7 @@ const ChatbotWidget = () => {
           variant="hero"
           size="icon"
           aria-label={isOpen ? "Close chat" : "Open chat"}
-          onClick={() => (isOpen ? closeWithThanks() : setIsOpen(true))}
+          onClick={() => setIsOpen((v) => !v)}
           className="rounded-full"
         >
           {isOpen ? <X className="w-5 h-5" /> : <MessageSquare className="w-5 h-5" />}
@@ -164,7 +111,7 @@ const ChatbotWidget = () => {
             <CardHeader className="py-4">
               <div className="flex items-center justify-between gap-3">
                 <CardTitle className="text-lg">Portfolio Chat</CardTitle>
-                <Button variant="ghost" size="icon" onClick={closeWithThanks} aria-label="Close">
+                <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} aria-label="Close">
                   <X className="w-5 h-5" />
                 </Button>
               </div>
@@ -212,9 +159,7 @@ const ChatbotWidget = () => {
                       >
                         <div className="whitespace-pre-line text-sm leading-relaxed">{m.text}</div>
 
-                        {m.source && (
-                          <div className="mt-2 text-xs text-muted-foreground">Source: {m.source}</div>
-                        )}
+
 
                         {m.actions && m.actions.length > 0 && (
                           <div className="mt-3 flex flex-wrap gap-2">

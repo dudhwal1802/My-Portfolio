@@ -1,6 +1,21 @@
-import { Mail, Phone, MapPin, Github, Linkedin, ExternalLink, MessageCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Github, Linkedin, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ScrollReveal from '@/components/ScrollReveal';
+
+const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+    <path
+      d="M12 2a9.5 9.5 0 0 0-8.17 14.33L3 22l5.86-1.76A9.5 9.5 0 1 0 12 2Z"
+      stroke="currentColor"
+      strokeWidth="1.7"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M9.2 8.9c.3-.6.6-.6 1-.6h.7c.3 0 .4 0 .6.4l.7 1.7c.1.2.1.5-.1.7l-.6.7c-.2.2-.2.4 0 .6.5 1 1.8 2.2 2.8 2.7.2.1.4.1.6-.1l.7-.6c.2-.2.5-.2.7-.1l1.7.7c.4.2.4.3.4.6v.7c0 .4 0 .7-.6 1-.7.4-2.1.6-4.5-.6-2.4-1.1-4-3.6-4.5-4.5-1.2-2.4-1-3.8-.6-4.5Z"
+      fill="currentColor"
+    />
+  </svg>
+);
 
 const contactInfo = [
   {
@@ -16,10 +31,10 @@ const contactInfo = [
     href: 'tel:+919660880910',
   },
   {
-    icon: MessageCircle,
+    icon: WhatsAppIcon,
     label: 'WhatsApp',
     value: '+91 9660880910',
-    href: 'https://wa.me/919660880910',
+    href: 'https://wa.me/919660880910?text=Hello%20Chandrabhan',
   },
   {
     icon: MapPin,

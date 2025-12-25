@@ -129,7 +129,7 @@ export function getWhatsAppUrl(prefillText?: string) {
 }
 
 export function getContactActions() {
-  const prefill = "Hi Chandrabhan, I visited your portfolio and would like to connect.";
+  const prefill = "Hello Chandrabhan";
   return [
     { label: "Phone Call", href: `tel:${PROFILE.contact.phoneE164}` },
     { label: "WhatsApp", href: getWhatsAppUrl(prefill) },
