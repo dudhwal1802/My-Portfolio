@@ -1,7 +1,6 @@
-import { Globe, Code2, CheckCircle, Github, Mail } from 'lucide-react';
+import { Globe, Code2, CheckCircle, Github } from 'lucide-react';
 import ScrollReveal from '@/components/ScrollReveal';
 import { Button } from '@/components/ui/button';
-import { scrollToHash } from '@/lib/scroll';
 
 const projects = [
   {
@@ -154,24 +153,6 @@ const ProjectsSection = () => {
                         </a>
                       </Button>
                     )}
-                    <Button
-                      variant="outline"
-                      className="justify-center"
-                      asChild
-                    >
-                      <a
-                        href="#contact"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          scrollToHash('#contact', { durationMs: 350 });
-                          window.history.pushState(null, '', '#contact');
-                        }}
-                        aria-label="Go to contact section"
-                      >
-                        <Mail className="w-4 h-4" />
-                        Contact Me
-                      </a>
-                    </Button>
                   </div>
                 </div>
 

@@ -5,33 +5,33 @@ const skillCategories = [
   {
     title: 'Languages',
     icon: Code,
-    skills: ['Python', 'SQL', 'HTML/CSS'],
+    skills: ['TypeScript', 'JavaScript', 'Python', 'HTML/CSS'],
     color: 'from-primary to-primary/70',
   },
   {
-    title: 'Frameworks & Libraries',
+    title: 'Web Development',
     icon: Database,
-    skills: ['Pandas', 'Numpy', 'Scikit-Learn'],
+    skills: ['React', 'Vite', 'Tailwind CSS', 'shadcn/ui'],
     color: 'from-primary/90 to-primary/60',
   },
   {
-    title: 'Tools',
+    title: 'ML & NLP',
     icon: Wrench,
-    skills: ['Excel', 'PowerPoint', 'MySQL'],
+    skills: ['Scikit-learn', 'Pandas', 'NumPy', 'TF‑IDF', 'Naive Bayes', 'Logistic Regression'],
     color: 'from-primary/80 to-primary/50',
   },
   {
-    title: 'Platforms',
+    title: 'Tooling & Deployment',
     icon: Layout,
-    skills: ['VS Code', 'Jupyter Notebook', 'PyCharm'],
+    skills: ['Git & GitHub', 'GitHub Actions (CI)', 'GitHub Pages', 'Streamlit', 'SEO', 'Accessibility (a11y)', 'VS Code', 'Jupyter Notebook'],
     color: 'from-primary/70 to-primary/40',
   },
 ];
 
 const softSkills = [
-  'Strong Communication Skills',
-  'Leadership and Event Coordination',
-  'Time Management',
+  'Problem Solving',
+  'Clear Communication',
+  'Attention to Detail (SEO & Accessibility)',
   'Team Collaboration',
 ];
 
@@ -46,7 +46,7 @@ const SkillsSection = () => {
               My <span className="text-gradient">Skills</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              A combination of technical expertise and soft skills that I bring to every project
+              Skills I apply across web development and ML/NLP projects—from building responsive UIs to deploying data-driven apps.
             </p>
           </div>
         </ScrollReveal>
