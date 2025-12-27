@@ -18,6 +18,7 @@ import {
   Home,
   Linkedin,
   Mail,
+  Phone,
   Sparkles,
   User,
 } from "lucide-react";
@@ -37,6 +38,10 @@ function openExternal(url: string) {
 
 function openMailTo(email: string) {
   window.location.href = `mailto:${email}`;
+}
+
+function openTel(phoneE164: string) {
+  window.location.href = `tel:${phoneE164}`;
 }
 
 function scrollToHashWhenReady(hash: string, timeoutMs = 1200) {
@@ -156,6 +161,23 @@ export default function CommandPalette() {
         keywords: "mail contact",
         run: () => {
           openMailTo("contact.chandrabhan@gmail.com");
+        },
+      },
+      {
+        value: "whatsapp-me",
+        label: "WhatsApp Me",
+        keywords: "whatsapp message chat",
+        run: () => {
+          openExternal("https://wa.me/919660880910?text=Hello%20Chandrabhan");
+        },
+      },
+      {
+        value: "call-me",
+        label: "Call Me",
+        icon: <Phone className="mr-2 h-4 w-4" />,
+        keywords: "phone call",
+        run: () => {
+          openTel("+919660880910");
         },
       },
     ],

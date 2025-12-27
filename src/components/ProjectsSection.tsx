@@ -1,5 +1,7 @@
-import { Globe, Code2, CheckCircle } from 'lucide-react';
+import { Globe, Code2, CheckCircle, Github, Mail } from 'lucide-react';
 import ScrollReveal from '@/components/ScrollReveal';
+import { Button } from '@/components/ui/button';
+import { scrollToHash } from '@/lib/scroll';
 
 const projects = [
   {
@@ -82,6 +84,39 @@ const ProjectsSection = () => {
                         {tech}
                       </span>
                     ))}
+                  </div>
+
+                  {/* Actions */}
+                  <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                    <Button variant="social" className="justify-center" asChild>
+                      <a
+                        href="https://github.com/dudhwal1802"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Open GitHub profile"
+                      >
+                        <Github className="w-4 h-4" />
+                        GitHub Profile
+                      </a>
+                    </Button>
+                    <Button
+                      variant="outline"
+                      className="justify-center"
+                      asChild
+                    >
+                      <a
+                        href="#contact"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          scrollToHash('#contact', { durationMs: 350 });
+                          window.history.pushState(null, '', '#contact');
+                        }}
+                        aria-label="Go to contact section"
+                      >
+                        <Mail className="w-4 h-4" />
+                        Contact Me
+                      </a>
+                    </Button>
                   </div>
                 </div>
 

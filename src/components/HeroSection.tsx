@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Download, ArrowDown } from 'lucide-react';
+import { Github, Linkedin, Mail, Download, ArrowDown, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import profilePhoto from '@/assets/profile-photo.jpeg';
 import Typewriter from '@/components/Typewriter';
@@ -60,6 +60,16 @@ const HeroSection = () => {
                   Get in Touch
                 </a>
               </Button>
+              <Button variant="outline" size="lg" asChild>
+                <a
+                  href="https://wa.me/919660880910?text=Hello%20Chandrabhan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  WhatsApp
+                </a>
+              </Button>
             </div>
 
             {/* Social Links */}
@@ -111,6 +121,7 @@ const HeroSection = () => {
                 width={384}
                 height={384}
                 loading="eager"
+                fetchpriority="high"
                 decoding="async"
                 className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full object-cover border-4 border-card shadow-xl"
               />
