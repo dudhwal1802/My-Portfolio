@@ -13,6 +13,7 @@ const projects = [
       'Demonstrated strong front-end development skills and attention to user experience',
     ],
     technologies: ['HTML', 'CSS', 'JavaScript'],
+    repoUrl: 'https://github.com/dudhwal1802/My-Portfolio',
     featured: true,
   },
   {
@@ -27,6 +28,7 @@ const projects = [
     ],
     technologies: ['Vite', 'React', 'TypeScript', 'Tailwind CSS'],
     liveUrl: 'https://dudhwal1802.github.io/satguru-packers-movers/',
+    repoUrl: 'https://github.com/dudhwal1802/satguru-packers-movers',
     featured: true,
   },
   {
@@ -50,6 +52,7 @@ const projects = [
       'Streamlit',
     ],
     liveUrl: 'https://fake-news-detect-by-cb.streamlit.app/',
+    repoUrl: 'https://github.com/dudhwal1802/fake-news',
     featured: true,
   },
 ];
@@ -138,17 +141,19 @@ const ProjectsSection = () => {
                         </a>
                       </Button>
                     )}
-                    <Button variant="social" className="justify-center" asChild>
-                      <a
-                        href="https://github.com/dudhwal1802"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Open GitHub profile"
-                      >
-                        <Github className="w-4 h-4" />
-                        GitHub Profile
-                      </a>
-                    </Button>
+                    {project.repoUrl && (
+                      <Button variant="social" className="justify-center" asChild>
+                        <a
+                          href={project.repoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`Open code repository: ${project.title}`}
+                        >
+                          <Github className="w-4 h-4" />
+                          View Code Repo
+                        </a>
+                      </Button>
+                    )}
                     <Button
                       variant="outline"
                       className="justify-center"
