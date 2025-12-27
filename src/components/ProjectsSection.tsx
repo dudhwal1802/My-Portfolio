@@ -15,6 +15,20 @@ const projects = [
     technologies: ['HTML', 'CSS', 'JavaScript'],
     featured: true,
   },
+  {
+    title: 'Satguru Packers & Movers — Business Website',
+    description:
+      'Built a fast, responsive single-page business website for a moving company with a modern UI and consistent branding.',
+    highlights: [
+      'Implemented mobile-first UX with a fixed bottom Call/WhatsApp CTA bar (safe-area handling) and non-overlapping floating action buttons',
+      'Added SEO + local SEO: meta tags, OpenGraph/Twitter cards, and schema.org JSON-LD (MovingCompany) for better search visibility',
+      'Improved accessibility with proper button types/labels, keyboard support for interactive elements, and reduced-motion support',
+      'Prepared GitHub Pages deployment (base path support with React Router) and CI workflow for build + deploy',
+    ],
+    technologies: ['Vite', 'React', 'TypeScript', 'Tailwind CSS'],
+    liveUrl: 'https://dudhwal1802.github.io/satguru-packers-movers/',
+    featured: true,
+  },
 ];
 
 const ProjectsSection = () => {
@@ -88,6 +102,19 @@ const ProjectsSection = () => {
 
                   {/* Actions */}
                   <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                    {project.liveUrl && (
+                      <Button className="justify-center" asChild>
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`Open live site: ${project.title}`}
+                        >
+                          <Globe className="w-4 h-4" />
+                          Live Site
+                        </a>
+                      </Button>
+                    )}
                     <Button variant="social" className="justify-center" asChild>
                       <a
                         href="https://github.com/dudhwal1802"
