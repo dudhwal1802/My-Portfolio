@@ -29,6 +29,29 @@ const projects = [
     liveUrl: 'https://dudhwal1802.github.io/satguru-packers-movers/',
     featured: true,
   },
+  {
+    title: 'Fake News Detection Web App (ML + NLP)',
+    description:
+      'Built an end-to-end Fake News Detection project using Python, Machine Learning, and Natural Language Processing, deployed as a Streamlit web app.',
+    highlights: [
+      'Trained and compared Naive Bayes and Logistic Regression models using TF‑IDF text features',
+      'Evaluated models with accuracy, precision, recall, and F1 to select the best-performing approach',
+      'Streamlit app lets users paste a headline/article and instantly predicts Fake vs Real with confidence and model details',
+      'Note: Educational project only — predictions should not be used for real-world decision making',
+    ],
+    technologies: [
+      'Python',
+      'Scikit-learn',
+      'Pandas',
+      'NLP',
+      'TF‑IDF',
+      'Naive Bayes',
+      'Logistic Regression',
+      'Streamlit',
+    ],
+    liveUrl: 'https://fake-news-detect-by-cb.streamlit.app/',
+    featured: true,
+  },
 ];
 
 const ProjectsSection = () => {
