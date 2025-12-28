@@ -5,13 +5,14 @@ import { Button } from '@/components/ui/button';
 const projects = [
   {
     title: 'Personal Portfolio Website',
-    description: 'Designed and developed a fully responsive personal portfolio website using HTML, CSS, and JavaScript.',
+    description:
+      'Built a modern, fully responsive portfolio using Vite + React + TypeScript + Tailwind CSS (shadcn/ui), with prompt engineering to iterate quickly on layout and content.',
     highlights: [
       'Highlights technical skills, projects, and academic achievements with a clean, professional interface',
       'Optimized for fast loading speed and cross-device compatibility',
-      'Demonstrated strong front-end development skills and attention to user experience',
+      'Created with AI-assisted prompt engineering to speed up UI/content iterations while keeping code quality and UX consistent',
     ],
-    technologies: ['HTML', 'CSS', 'JavaScript'],
+    technologies: ['Vite', 'React', 'TypeScript', 'Tailwind CSS', 'shadcn/ui', 'Radix UI', 'React Router', 'Prompt Engineering'],
     repoUrl: 'https://github.com/dudhwal1802/My-Portfolio',
     featured: true,
   },
@@ -20,12 +21,13 @@ const projects = [
     description:
       'Built a fast, responsive single-page business website for a moving company with a modern UI and consistent branding.',
     highlights: [
+      'Used prompt engineering to iterate faster on content, section structure, and SEO copy while keeping branding consistent',
       'Implemented mobile-first UX with a fixed bottom Call/WhatsApp CTA bar (safe-area handling) and non-overlapping floating action buttons',
       'Added SEO + local SEO: meta tags, OpenGraph/Twitter cards, and schema.org JSON-LD (MovingCompany) for better search visibility',
       'Improved accessibility with proper button types/labels, keyboard support for interactive elements, and reduced-motion support',
       'Prepared GitHub Pages deployment (base path support with React Router) and CI workflow for build + deploy',
     ],
-    technologies: ['Vite', 'React', 'TypeScript', 'Tailwind CSS'],
+    technologies: ['Vite', 'React', 'TypeScript', 'Tailwind CSS', 'React Router', 'Prompt Engineering'],
     liveUrl: 'https://dudhwal1802.github.io/satguru-packers-movers/',
     repoUrl: 'https://github.com/dudhwal1802/satguru-packers-movers',
     featured: true,

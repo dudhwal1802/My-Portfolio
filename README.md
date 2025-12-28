@@ -22,11 +22,11 @@ A modern, responsive personal portfolio built with **Vite + React + TypeScript +
 
 ## Featured Projects (as shown on the site)
 
-| Project | Live | Code |
-| --- | --- | --- |
-| Personal Portfolio Website | — | https://github.com/dudhwal1802/My-Portfolio |
-| Satguru Packers & Movers — Business Website | https://dudhwal1802.github.io/satguru-packers-movers/ | https://github.com/dudhwal1802/satguru-packers-movers |
-| Fake News Detection Web App (ML + NLP) | https://fake-news-detect-by-cb.streamlit.app/ | https://github.com/dudhwal1802/fake-news |
+| Project | Live | Code | Stack / Notes |
+| --- | --- | --- | --- |
+| Personal Portfolio Website | — | https://github.com/dudhwal1802/My-Portfolio | Vite, React, TypeScript, Tailwind CSS, shadcn/ui • Prompt Engineering (AI-assisted) |
+| Satguru Packers & Movers — Business Website | https://dudhwal1802.github.io/satguru-packers-movers/ | https://github.com/dudhwal1802/satguru-packers-movers | Vite, React, TypeScript, Tailwind CSS • Prompt Engineering (AI-assisted) |
+| Fake News Detection Web App (ML + NLP) | https://fake-news-detect-by-cb.streamlit.app/ | https://github.com/dudhwal1802/fake-news | Python, scikit-learn, NLP, Streamlit |
 
 > Note (Fake News project): Educational project only — predictions should not be used for real-world decision making.
 
@@ -44,6 +44,10 @@ A modern, responsive personal portfolio built with **Vite + React + TypeScript +
 **Quality / Tooling**
 
 - ESLint
+
+**AI / Productivity**
+
+- Prompt Engineering (AI-assisted development)
 
 ## Getting Started (Local Setup)
 

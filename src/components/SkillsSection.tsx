@@ -5,13 +5,13 @@ const skillCategories = [
   {
     title: 'Languages',
     icon: Code,
-    skills: ['TypeScript', 'JavaScript', 'Python', 'HTML/CSS'],
+    skills: ['TypeScript', 'JavaScript', 'Python'],
     color: 'from-primary to-primary/70',
   },
   {
     title: 'Web Development',
     icon: Database,
-    skills: ['React', 'Vite', 'Tailwind CSS', 'shadcn/ui'],
+    skills: ['React', 'React Router', 'Vite', 'Tailwind CSS', 'shadcn/ui', 'Radix UI'],
     color: 'from-primary/90 to-primary/60',
   },
   {
@@ -23,7 +23,17 @@ const skillCategories = [
   {
     title: 'Tooling & Deployment',
     icon: Layout,
-    skills: ['Git & GitHub', 'GitHub Actions (CI)', 'GitHub Pages', 'Streamlit', 'SEO', 'Accessibility (a11y)', 'VS Code', 'Jupyter Notebook'],
+    skills: [
+      'Git & GitHub',
+      'GitHub Actions (CI)',
+      'GitHub Pages',
+      'Prompt Engineering',
+      'Streamlit',
+      'SEO',
+      'Accessibility (a11y)',
+      'VS Code',
+      'Jupyter Notebook',
+    ],
     color: 'from-primary/70 to-primary/40',
   },
 ];
@@ -46,7 +56,7 @@ const SkillsSection = () => {
               My <span className="text-gradient">Skills</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Skills I apply across web development and ML/NLP projects—from building responsive UIs to deploying data-driven apps.
+              Skills I apply across web development and ML/NLP projects—from building responsive UIs to deploying data-driven apps (including prompt-engineering driven iteration).
             </p>
           </div>
         </ScrollReveal>
