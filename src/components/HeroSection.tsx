@@ -1,7 +1,6 @@
 import { Github, Linkedin, Mail, Download, ArrowDown, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import profilePhoto from '@/assets/profile-photo.jpeg';
-import Typewriter from '@/components/Typewriter';
 import AnimatedBackground from '@/components/AnimatedBackground';
 import { scrollToHash } from '@/lib/scroll';
 
@@ -30,10 +29,6 @@ const HeroSection = () => {
               Hi, I'm{' '}
               <span className="text-gradient">Chandrabhan</span>
             </h1>
-            
-            <div className="text-xl md:text-2xl lg:text-3xl font-semibold text-foreground mb-4 h-12">
-              I'm into <Typewriter words={['Data Science', 'Web Development', 'Python', 'Machine Learning']} />
-            </div>
             
             <p className="text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8">
               MCA student passionate about exploring new technologies and building impactful solutions. Based in Rajasthan, India.
