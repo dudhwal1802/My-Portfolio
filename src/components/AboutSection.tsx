@@ -1,4 +1,4 @@
-import { GraduationCap, MapPin, Languages, Heart } from 'lucide-react';
+import { GraduationCap, MapPin, Languages, Heart, Briefcase, BarChart3 } from 'lucide-react';
 import ScrollReveal from '@/components/ScrollReveal';
 
 const education = [
@@ -22,6 +22,19 @@ const education = [
   },
 ];
 
+const experience = [
+  {
+    company: 'Uptoskills',
+    role: 'Data Analyst Intern',
+    period: 'Jan 2026 – Current',
+    highlights: [
+      'Working with structured datasets to clean, organize, and prepare data for accurate reporting and analysis.',
+      'Building dashboards and summary reports to turn raw numbers into clear, decision-ready insights.',
+      'Exploring trends, KPIs, and patterns that help improve business understanding and support data-driven decisions.',
+    ],
+  },
+];
+
 const AboutSection = () => {
   return (
     <section id="about" className="py-20 md:py-28 bg-card">
@@ -38,11 +51,11 @@ const AboutSection = () => {
           </div>
         </ScrollReveal>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+        <div className="grid lg:grid-cols-2 gap-10 md:gap-12 lg:gap-16">
           {/* About Text */}
           <ScrollReveal direction="left">
             <div className="space-y-6">
-              <div className="prose prose-lg">
+              <div className="prose prose-lg max-w-none">
                 <p className="text-muted-foreground leading-relaxed">
                   I'm Chandrabhan, a Master of Computer Applications student at Jaipur National University. 
                   With a strong foundation in computer applications and a keen interest in data science and web development, 
@@ -52,12 +65,17 @@ const AboutSection = () => {
                   My journey in technology began with my PGDCA where I discovered my passion for programming and data analysis. 
                   I enjoy building responsive web applications and working with data to derive meaningful insights.
                 </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  Currently, as a Data Analyst Intern at Uptoskills, I am sharpening my analytical thinking by working on data cleaning,
+                  reporting, and insight generation. I enjoy translating complex datasets into simple stories that support smarter
+                  decisions and reveal meaningful business trends.
+                </p>
               </div>
 
               {/* Quick Info Cards */}
               <div className="grid sm:grid-cols-2 gap-4 mt-8">
                 <div className="flex items-start gap-4 p-4 rounded-xl bg-background border border-border hover:border-primary/30 hover:shadow-card transition-all duration-300">
-                  <div className="p-2 rounded-lg bg-accent">
+                  <div className="p-2 rounded-lg bg-accent shrink-0">
                     <MapPin className="w-5 h-5 text-primary" />
                   </div>
                   <div>
@@ -66,7 +84,7 @@ const AboutSection = () => {
                   </div>
                 </div>
                 <div className="flex items-start gap-4 p-4 rounded-xl bg-background border border-border hover:border-primary/30 hover:shadow-card transition-all duration-300">
-                  <div className="p-2 rounded-lg bg-accent">
+                  <div className="p-2 rounded-lg bg-accent shrink-0">
                     <Languages className="w-5 h-5 text-primary" />
                   </div>
                   <div>
@@ -75,12 +93,23 @@ const AboutSection = () => {
                   </div>
                 </div>
                 <div className="flex items-start gap-4 p-4 rounded-xl bg-background border border-border sm:col-span-2 hover:border-primary/30 hover:shadow-card transition-all duration-300">
-                  <div className="p-2 rounded-lg bg-accent">
+                  <div className="p-2 rounded-lg bg-accent shrink-0">
                     <Heart className="w-5 h-5 text-primary" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">Interests</h4>
                     <p className="text-sm text-muted-foreground">Data Science, Web Development, Exploring New Technologies</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4 p-4 rounded-xl bg-background border border-border sm:col-span-2 hover:border-primary/30 hover:shadow-card transition-all duration-300">
+                  <div className="p-2 rounded-lg bg-accent shrink-0">
+                    <BarChart3 className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground">Data Analytics Focus</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Data cleaning, dashboard reporting, trend analysis, KPI tracking, and transforming raw data into actionable insights.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -98,21 +127,21 @@ const AboutSection = () => {
                 {education.map((edu, index) => (
                   <div
                     key={index}
-                    className="relative pl-8 pb-6 border-l-2 border-border last:pb-0 last:border-l-primary"
+                    className="relative pl-6 sm:pl-8 pb-6 border-l-2 border-border last:pb-0 last:border-l-primary"
                   >
                     {/* Timeline dot */}
-                    <div className="absolute left-0 top-0 w-4 h-4 -translate-x-[9px] rounded-full bg-primary border-4 border-card" />
+                    <div className="absolute left-0 top-0 w-3.5 h-3.5 sm:w-4 sm:h-4 -translate-x-[8px] sm:-translate-x-[9px] rounded-full bg-primary border-4 border-card" />
                     
-                    <div className="bg-background rounded-xl p-5 border border-border hover:border-primary/30 hover:shadow-card transition-all duration-300">
-                      <div className="flex items-start justify-between gap-4 mb-2">
+                    <div className="bg-background rounded-xl p-4 sm:p-5 border border-border hover:border-primary/30 hover:shadow-card transition-all duration-300">
+                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-2">
                         <h4 className="font-semibold text-foreground">{edu.degree}</h4>
                         {edu.grade && (
-                          <span className="px-3 py-1 text-xs font-medium rounded-full bg-accent text-primary whitespace-nowrap">
+                          <span className="px-3 py-1 text-xs font-medium rounded-full bg-accent text-primary whitespace-nowrap w-fit">
                             {edu.grade}
                           </span>
                         )}
                         {edu.status && (
-                          <span className="px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary whitespace-nowrap">
+                          <span className="px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary whitespace-nowrap w-fit">
                             {edu.status}
                           </span>
                         )}
@@ -122,6 +151,41 @@ const AboutSection = () => {
                     </div>
                   </div>
                 ))}
+              </div>
+
+              <div className="mt-12">
+                <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
+                  <Briefcase className="w-6 h-6 text-primary" />
+                  Experience
+                </h3>
+                <div className="space-y-6">
+                  {experience.map((item, index) => (
+                    <div
+                      key={index}
+                      className="relative pl-6 sm:pl-8 pb-6 border-l-2 border-border last:pb-0 last:border-l-primary"
+                    >
+                      <div className="absolute left-0 top-0 w-3.5 h-3.5 sm:w-4 sm:h-4 -translate-x-[8px] sm:-translate-x-[9px] rounded-full bg-primary border-4 border-card" />
+
+                      <div className="bg-background rounded-xl p-4 sm:p-5 border border-border hover:border-primary/30 hover:shadow-card transition-all duration-300">
+                        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-3">
+                          <div>
+                            <h4 className="font-semibold text-foreground">{item.role}</h4>
+                            <p className="text-sm text-muted-foreground">{item.company}</p>
+                          </div>
+                          <span className="px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary whitespace-nowrap w-fit">
+                            {item.period}
+                          </span>
+                        </div>
+
+                        <ul className="space-y-2 text-sm text-muted-foreground list-disc pl-5">
+                          {item.highlights.map((highlight) => (
+                            <li key={highlight}>{highlight}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </ScrollReveal>
