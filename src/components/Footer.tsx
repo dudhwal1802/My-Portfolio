@@ -1,5 +1,4 @@
-import { ArrowUp, Github, Linkedin, Mail } from 'lucide-react';
-import { scrollToHash } from '@/lib/scroll';
+import { Github, Linkedin, Mail } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -8,29 +7,17 @@ const Footer = () => {
   return (
     <footer className="py-8 bg-background border-t border-border">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col gap-4 md:gap-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
-            {/* Copyright */}
+        <div className="border-t border-border/60 pt-6">
+          <div className="grid gap-4 md:grid-cols-[1fr_auto_1fr] md:items-center">
             <p className="text-sm text-muted-foreground text-center md:text-left">
+              Last updated on <span className="text-foreground font-medium">{lastUpdated}</span>
+            </p>
+
+            <p className="text-sm text-muted-foreground text-center">
               © {currentYear} Chandrabhan. All rights reserved.
             </p>
 
-            {/* Actions */}
-            <div className="flex flex-wrap items-center justify-center md:justify-end gap-2 w-full md:w-auto">
-              <a
-                href="#home"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToHash('#home', { durationMs: 350 });
-                  window.history.pushState(null, '', '#home');
-                }}
-                className="inline-flex items-center justify-center gap-2 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background w-full sm:w-auto"
-                aria-label="Back to top"
-              >
-                <ArrowUp className="w-4 h-4" />
-                Back to top
-              </a>
-
+            <div className="flex items-center justify-center md:justify-end gap-2">
               <a
                 href="https://github.com/dudhwal1802"
                 target="_blank"
@@ -57,12 +44,6 @@ const Footer = () => {
                 <Mail className="w-5 h-5" />
               </a>
             </div>
-          </div>
-
-          <div className="text-center border-t border-border pt-4">
-            <p className="text-sm text-muted-foreground">
-              Last updated on <span className="text-foreground font-medium">{lastUpdated}</span>
-            </p>
           </div>
         </div>
       </div>

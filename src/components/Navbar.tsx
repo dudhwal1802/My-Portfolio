@@ -6,6 +6,7 @@ import { scrollToHash } from '@/lib/scroll';
 const navLinks = [
   { href: '#home', label: 'Home' },
   { href: '#about', label: 'About' },
+  { href: '#experience', label: 'Experience' },
   { href: '#skills', label: 'Skills' },
   { href: '#projects', label: 'Projects' },
   { href: '#certifications', label: 'Certifications' },

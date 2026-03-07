@@ -30,11 +30,12 @@ const ScrollReveal = ({
   return (
     <div
       ref={ref}
-      className={cn('transition-all duration-500 ease-out', className)}
+      className={cn('transition-all duration-700', className)}
       style={{
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? 'translate(0)' : getTransform(),
         transitionDelay: `${delay}ms`,
+        transitionTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)',
       }}
     >
       {children}

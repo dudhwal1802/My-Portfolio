@@ -1,12 +1,16 @@
-import { Globe, Code2, CheckCircle, Github } from 'lucide-react';
+import { Globe, Code2, CheckCircle, Github, Target, Wrench, TrendingUp } from 'lucide-react';
 import ScrollReveal from '@/components/ScrollReveal';
 import { Button } from '@/components/ui/button';
 
 const projects = [
   {
     title: 'Personal Portfolio Website',
+    category: 'Web Portfolio',
     description:
       'Built a modern, fully responsive portfolio using Vite + React + TypeScript + Tailwind CSS (shadcn/ui), with prompt engineering to iterate quickly on layout and content.',
+    problem: 'Needed a professional personal website to present skills, projects, education, and career direction in one place.',
+    approach: 'Designed a responsive React-based portfolio with clear section structure, polished UI, and fast content iteration.',
+    outcome: 'Created a recruiter-friendly portfolio experience that clearly communicates strengths and current growth areas.',
     highlights: [
       'Highlights technical skills, projects, and academic achievements with a clean, professional interface',
       'Optimized for fast loading speed and cross-device compatibility',
@@ -18,8 +22,12 @@ const projects = [
   },
   {
     title: 'Satguru Packers & Movers — Business Website',
+    category: 'Business Website',
     description:
       'Built a fast, responsive single-page business website for a moving company with a modern UI and consistent branding.',
+    problem: 'The business needed a strong online presence with mobile-first UX, trust-building design, and better discoverability.',
+    approach: 'Developed a responsive site with clear CTAs, branding consistency, SEO improvements, and accessibility-focused interactions.',
+    outcome: 'Delivered a production-ready business site designed to support customer discovery, inquiry, and local search visibility.',
     highlights: [
       'Used prompt engineering to iterate faster on content, section structure, and SEO copy while keeping branding consistent',
       'Implemented mobile-first UX with a fixed bottom Call/WhatsApp CTA bar (safe-area handling) and non-overlapping floating action buttons',
@@ -34,8 +42,12 @@ const projects = [
   },
   {
     title: 'Fake News Detection Web App (ML + NLP)',
+    category: 'ML / NLP Project',
     description:
       'Built an end-to-end Fake News Detection project using Python, Machine Learning, and Natural Language Processing, deployed as a Streamlit web app.',
+    problem: 'Wanted to apply machine learning and NLP concepts in a practical project that users could test directly.',
+    approach: 'Trained and compared classification models using TF‑IDF text features, then wrapped the best workflow in a Streamlit app.',
+    outcome: 'Produced an interactive ML demo that makes text classification concepts easy to explore and understand.',
     highlights: [
       'Trained and compared Naive Bayes and Logistic Regression models using TF‑IDF text features',
       'Evaluated models with accuracy, precision, recall, and F1 to select the best-performing approach',
@@ -60,11 +72,12 @@ const projects = [
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="py-20 md:py-28 bg-card">
+    <section id="projects" className="py-16 md:py-24 lg:py-28 bg-card">
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
         <ScrollReveal>
-          <div className="text-center mb-16">
+          <div className="text-center mb-14 md:mb-16">
+            <div className="section-divider" />
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Featured <span className="text-gradient">Projects</span>
             </h2>
@@ -75,10 +88,10 @@ const ProjectsSection = () => {
         </ScrollReveal>
 
         {/* Projects Grid */}
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto space-y-8">
           {projects.map((project, index) => (
             <ScrollReveal key={project.title} delay={index * 150}>
-              <div className="group relative overflow-hidden rounded-2xl bg-background border border-border hover:border-primary/30 transition-all duration-500">
+              <div className="group relative overflow-hidden rounded-2xl section-card-surface border border-border hover:border-primary/30 transition-all duration-500 interactive-card">
                 {/* Featured Badge */}
                 {project.featured && (
                   <div className="absolute top-4 right-4 z-10">
@@ -99,10 +112,40 @@ const ProjectsSection = () => {
                     {project.title}
                   </h3>
 
+                  <div className="mb-4">
+                    <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">
+                      {project.category}
+                    </span>
+                  </div>
+
                   {/* Description */}
                   <p className="text-muted-foreground mb-6 text-lg">
                     {project.description}
                   </p>
+
+                  <div className="grid md:grid-cols-3 md:auto-rows-fr gap-4 mb-8">
+                    <div className="rounded-2xl border border-border section-card-surface p-4 h-full min-h-[180px] flex flex-col interactive-card-soft">
+                      <div className="inline-flex rounded-lg bg-accent p-2 mb-3">
+                        <Target className="w-4 h-4 text-primary" />
+                      </div>
+                      <h4 className="font-semibold text-foreground mb-2">Problem</h4>
+                      <p className="text-sm text-muted-foreground leading-relaxed mt-auto">{project.problem}</p>
+                    </div>
+                    <div className="rounded-2xl border border-border section-card-surface p-4 h-full min-h-[180px] flex flex-col interactive-card-soft">
+                      <div className="inline-flex rounded-lg bg-accent p-2 mb-3">
+                        <Wrench className="w-4 h-4 text-primary" />
+                      </div>
+                      <h4 className="font-semibold text-foreground mb-2">Approach</h4>
+                      <p className="text-sm text-muted-foreground leading-relaxed mt-auto">{project.approach}</p>
+                    </div>
+                    <div className="rounded-2xl border border-border section-card-surface p-4 h-full min-h-[180px] flex flex-col interactive-card-soft">
+                      <div className="inline-flex rounded-lg bg-accent p-2 mb-3">
+                        <TrendingUp className="w-4 h-4 text-primary" />
+                      </div>
+                      <h4 className="font-semibold text-foreground mb-2">Outcome</h4>
+                      <p className="text-sm text-muted-foreground leading-relaxed mt-auto">{project.outcome}</p>
+                    </div>
+                  </div>
 
                   {/* Highlights */}
                   <div className="space-y-3 mb-8">
