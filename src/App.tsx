@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import CommandPalette from "@/components/CommandPalette";
+import ThreeDBackground from "@/components/ThreeDBackground";
 
 const queryClient = new QueryClient();
 
@@ -16,6 +17,7 @@ const routerBasename = import.meta.env.BASE_URL.endsWith("/")
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      <ThreeDBackground />
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-background focus:text-foreground focus:px-4 focus:py-2 focus:rounded focus:border focus:border-border focus:outline-none focus:ring-2 focus:ring-ring"
