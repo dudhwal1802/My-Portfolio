@@ -13,6 +13,7 @@ import {
 import { scrollToHash } from "@/lib/scroll";
 import {
   BadgeCheck,
+  BookOpen,
   FolderGit2,
   Github,
   Home,
@@ -118,6 +119,16 @@ export default function CommandPalette() {
         run: () => {
           navigate({ pathname: "/", hash: "#certifications" });
           scrollToHashWhenReady("#certifications");
+        },
+      },
+      {
+        value: "nav-publications",
+        label: "Go to Publications",
+        icon: <BookOpen className="mr-2 h-4 w-4" />,
+        shortcut: "R",
+        run: () => {
+          navigate({ pathname: "/", hash: "#publications" });
+          scrollToHashWhenReady("#publications");
         },
       },
       {

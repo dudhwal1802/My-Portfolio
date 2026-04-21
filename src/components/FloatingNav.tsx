@@ -4,10 +4,11 @@ import { scrollToHash } from '@/lib/scroll';
 const sections = [
   { id: 'home', label: 'Home' },
   { id: 'about', label: 'About' },
-  { id: 'experience', label: 'Experience' },
   { id: 'skills', label: 'Skills' },
+  { id: 'experience', label: 'Experience' },
   { id: 'projects', label: 'Projects' },
   { id: 'certifications', label: 'Certifications' },
+  { id: 'publications', label: 'Publications' },
   { id: 'contact', label: 'Contact' },
 ];
 
