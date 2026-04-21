@@ -37,19 +37,19 @@ const HeroSection = () => {
       <AnimatedBackground />
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-10 md:gap-12 lg:gap-16">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 md:gap-16 lg:gap-20">
           {/* Text Content */}
           <div className="flex-1 text-center lg:text-left opacity-0 animate-fade-up">
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-6">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/90 backdrop-blur-sm text-accent-foreground text-sm font-medium interactive-card-soft">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 backdrop-blur-md text-primary text-sm font-medium interactive-card-soft border border-primary/30">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
                 </span>
                 Open to Work
               </div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium interactive-card-soft">
-                <Briefcase className="w-4 h-4" />
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 backdrop-blur-md border border-primary/30 text-primary text-sm font-medium interactive-card-soft hover:bg-white/80 hover:border-primary/50 transition-all">
+                <Briefcase className="w-4 h-4 text-primary" />
                 Data Analyst Intern at Uptoskills
               </div>
             </div>
@@ -75,7 +75,7 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-8">
               <Button variant="hero" size="lg" className="w-full sm:w-auto" asChild>
                 <a href={`${import.meta.env.BASE_URL}Chandrabhan_Resume.pdf`} download>
-                  <Download className="w-5 h-5" />
+                  <Download className="w-5 h-5 text-primary-foreground" />
                   Download Resume
                 </a>
               </Button>
@@ -88,7 +88,7 @@ const HeroSection = () => {
                     window.history.pushState(null, '', '#experience');
                   }}
                 >
-                  <Briefcase className="w-5 h-5" />
+                  <Briefcase className="w-5 h-5 text-primary" />
                   View Experience
                 </a>
               </Button>
@@ -101,7 +101,7 @@ const HeroSection = () => {
                     window.history.pushState(null, '', '#contact');
                   }}
                 >
-                  <Mail className="w-5 h-5" />
+                  <Mail className="w-5 h-5 text-primary" />
                   Get in Touch
                 </a>
               </Button>
@@ -111,7 +111,7 @@ const HeroSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <MessageCircle className="w-5 h-5" />
+                  <MessageCircle className="w-5 h-5 text-primary" />
                   WhatsApp
                 </a>
               </Button>
@@ -128,7 +128,7 @@ const HeroSection = () => {
                     rel="noopener noreferrer"
                     aria-label="GitHub"
                   >
-                    <Github className="w-5 h-5" />
+                    <Github className="w-5 h-5 text-primary" />
                   </a>
                 </Button>
                 <Button variant="social" size="icon" asChild>
@@ -138,7 +138,7 @@ const HeroSection = () => {
                     rel="noopener noreferrer"
                     aria-label="LinkedIn"
                   >
-                    <Linkedin className="w-5 h-5" />
+                    <Linkedin className="w-5 h-5 text-primary" />
                   </a>
                 </Button>
                 <Button variant="social" size="icon" asChild>
@@ -146,23 +146,23 @@ const HeroSection = () => {
                     href="mailto:contact.chandrabhan@gmail.com"
                     aria-label="Email"
                   >
-                    <Mail className="w-5 h-5" />
+                    <Mail className="w-5 h-5 text-primary" />
                   </a>
                 </Button>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 sm:auto-rows-fr gap-4 mt-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 sm:auto-rows-fr gap-4 mt-12">
               {quickStats.map((item) => (
                 <div
                   key={item.label}
-                  className="rounded-2xl border border-border section-card-surface p-5 text-left shadow-card h-full min-h-[140px] flex flex-col interactive-card-soft"
+                  className="rounded-xl border border-primary/20 section-card-surface p-5 text-left shadow-sm hover:shadow-card transition-all duration-300 h-full min-h-[130px] flex flex-col interactive-card-soft bg-white/50 backdrop-blur-md hover:border-primary/40 hover:bg-white/70"
                 >
-                  <div className="inline-flex rounded-xl bg-accent p-2.5 mb-3">
+                  <div className="inline-flex rounded-lg bg-primary/15 p-2.5 mb-4 w-fit">
                     <item.icon className="w-5 h-5 text-primary" />
                   </div>
-                  <p className="text-sm text-muted-foreground mb-1">{item.label}</p>
-                  <p className="font-semibold text-foreground leading-snug mt-auto">{item.value}</p>
+                  <p className="text-xs text-muted-foreground mb-2 font-medium tracking-wide">{item.label}</p>
+                  <p className="font-semibold text-foreground leading-snug mt-auto text-sm">{item.value}</p>
                 </div>
               ))}
             </div>
@@ -171,9 +171,9 @@ const HeroSection = () => {
           {/* Profile Image */}
           <div className="flex-shrink-0 opacity-0 animate-scale-in stagger-2">
             <div className="relative animate-float-soft">
-              {/* Decorative elements */}
-              <div className="absolute -inset-4 rounded-full gradient-primary opacity-20 blur-2xl animate-pulse-slow" />
-              <div className="absolute -inset-1 rounded-full gradient-primary opacity-30" />
+              {/* Glass morphism glow - subtle purple */}
+              <div className="absolute -inset-4 rounded-full bg-primary/10 blur-2xl" />
+              <div className="absolute -inset-2 rounded-full border border-primary/20 backdrop-blur-sm" />
               
               <img
                 src={profilePhoto}
@@ -183,7 +183,7 @@ const HeroSection = () => {
                 loading="eager"
                 fetchpriority="high"
                 decoding="async"
-                className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full object-cover border-4 border-card shadow-xl"
+                className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full object-cover border-4 border-primary/30 shadow-lg"
               />
             </div>
           </div>

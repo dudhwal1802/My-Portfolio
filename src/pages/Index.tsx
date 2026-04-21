@@ -22,8 +22,8 @@ const Index = () => {
       <main id="main-content" tabIndex={-1}>
         <HeroSection />
         <AboutSection />
-        <ExperienceSection />
         <SkillsSection />
+        <ExperienceSection />
         <ProjectsSection />
         <CertificationsSection />
         <ContactSection />

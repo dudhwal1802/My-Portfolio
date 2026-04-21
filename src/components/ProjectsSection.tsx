@@ -72,30 +72,30 @@ const projects = [
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="py-16 md:py-24 lg:py-28 bg-card">
+    <section id="projects" className="py-20 md:py-32 lg:py-40 bg-card/40 backdrop-blur-sm">
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
         <ScrollReveal>
-          <div className="text-center mb-14 md:mb-16">
-            <div className="section-divider" />
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <div className="text-center mb-16 md:mb-20">
+            <div className="section-divider-large" />
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
               Featured <span className="text-gradient">Projects</span>
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl mx-auto text-base leading-relaxed">
               Showcasing my work and the technologies I've worked with
             </p>
           </div>
         </ScrollReveal>
 
         {/* Projects Grid */}
-        <div className="max-w-5xl mx-auto space-y-8">
+        <div className="max-w-5xl mx-auto space-y-10">
           {projects.map((project, index) => (
             <ScrollReveal key={project.title} delay={index * 150}>
               <div className="group relative overflow-hidden rounded-2xl section-card-surface border border-border hover:border-primary/30 transition-all duration-500 interactive-card">
                 {/* Featured Badge */}
                 {project.featured && (
                   <div className="absolute top-4 right-4 z-10">
-                    <span className="px-3 py-1 text-xs font-semibold rounded-full gradient-primary text-primary-foreground">
+                    <span className="px-3 py-1 text-xs font-semibold rounded-full bg-primary text-primary-foreground shadow-md">
                       Featured
                     </span>
                   </div>
@@ -103,8 +103,8 @@ const ProjectsSection = () => {
 
                 <div className="p-8 md:p-10">
                   {/* Project Icon */}
-                  <div className="inline-flex p-4 rounded-2xl bg-accent mb-6">
-                    <Globe className="w-8 h-8 text-primary" />
+                  <div className="inline-flex p-4 rounded-2xl bg-primary mb-6">
+                    <Globe className="w-8 h-8 text-white" />
                   </div>
 
                   {/* Project Title */}
@@ -113,7 +113,7 @@ const ProjectsSection = () => {
                   </h3>
 
                   <div className="mb-4">
-                    <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">
+                    <span className="inline-flex items-center rounded-full bg-white/50 backdrop-blur-sm px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary border border-primary/25">
                       {project.category}
                     </span>
                   </div>
@@ -124,23 +124,23 @@ const ProjectsSection = () => {
                   </p>
 
                   <div className="grid md:grid-cols-3 md:auto-rows-fr gap-4 mb-8">
-                    <div className="rounded-2xl border border-border section-card-surface p-4 h-full min-h-[180px] flex flex-col interactive-card-soft">
-                      <div className="inline-flex rounded-lg bg-accent p-2 mb-3">
-                        <Target className="w-4 h-4 text-primary" />
+                    <div className="rounded-2xl border border-primary/20 bg-white/50 backdrop-blur-md p-4 h-full min-h-[180px] flex flex-col interactive-card-soft hover:bg-white/70 hover:border-primary/40 transition-all duration-300">
+                      <div className="inline-flex rounded-lg bg-primary p-2 mb-3">
+                        <Target className="w-4 h-4 text-white" />
                       </div>
                       <h4 className="font-semibold text-foreground mb-2">Problem</h4>
                       <p className="text-sm text-muted-foreground leading-relaxed mt-auto">{project.problem}</p>
                     </div>
-                    <div className="rounded-2xl border border-border section-card-surface p-4 h-full min-h-[180px] flex flex-col interactive-card-soft">
-                      <div className="inline-flex rounded-lg bg-accent p-2 mb-3">
-                        <Wrench className="w-4 h-4 text-primary" />
+                    <div className="rounded-2xl border border-primary/20 bg-white/50 backdrop-blur-md p-4 h-full min-h-[180px] flex flex-col interactive-card-soft hover:bg-white/70 hover:border-primary/40 transition-all duration-300">
+                      <div className="inline-flex rounded-lg bg-primary p-2 mb-3">
+                        <Wrench className="w-4 h-4 text-white" />
                       </div>
                       <h4 className="font-semibold text-foreground mb-2">Approach</h4>
                       <p className="text-sm text-muted-foreground leading-relaxed mt-auto">{project.approach}</p>
                     </div>
-                    <div className="rounded-2xl border border-border section-card-surface p-4 h-full min-h-[180px] flex flex-col interactive-card-soft">
-                      <div className="inline-flex rounded-lg bg-accent p-2 mb-3">
-                        <TrendingUp className="w-4 h-4 text-primary" />
+                    <div className="rounded-2xl border border-primary/20 bg-white/50 backdrop-blur-md p-4 h-full min-h-[180px] flex flex-col interactive-card-soft hover:bg-white/70 hover:border-primary/40 transition-all duration-300">
+                      <div className="inline-flex rounded-lg bg-primary p-2 mb-3">
+                        <TrendingUp className="w-4 h-4 text-white" />
                       </div>
                       <h4 className="font-semibold text-foreground mb-2">Outcome</h4>
                       <p className="text-sm text-muted-foreground leading-relaxed mt-auto">{project.outcome}</p>
@@ -162,7 +162,7 @@ const ProjectsSection = () => {
                     {project.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium rounded-lg bg-accent text-accent-foreground"
+                        className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium rounded-lg bg-primary text-white"
                       >
                         <Code2 className="w-4 h-4" />
                         {tech}

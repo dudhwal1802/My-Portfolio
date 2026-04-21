@@ -30,7 +30,7 @@ export default function BackToTopButton() {
           window.history.pushState(null, "", "#home");
         }}
       >
-        <ArrowUp className="w-5 h-5" />
+        <ArrowUp className="w-5 h-5 text-primary" />
       </Button>
     </div>
   );

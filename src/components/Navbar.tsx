@@ -6,8 +6,8 @@ import { scrollToHash } from '@/lib/scroll';
 const navLinks = [
   { href: '#home', label: 'Home' },
   { href: '#about', label: 'About' },
-  { href: '#experience', label: 'Experience' },
   { href: '#skills', label: 'Skills' },
+  { href: '#experience', label: 'Experience' },
   { href: '#projects', label: 'Projects' },
   { href: '#certifications', label: 'Certifications' },
   { href: '#contact', label: 'Contact' },
@@ -60,7 +60,7 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled || isOpen
-          ? 'bg-card/95 backdrop-blur-md shadow-card border-b border-border'
+          ? 'bg-card/95 backdrop-blur-xl shadow-elevated border-b border-border'
           : 'bg-transparent'
       }`}
       aria-label="Primary"
@@ -106,7 +106,7 @@ const Navbar = () => {
             </div>
             <Button variant="hero" size="default" asChild>
               <a href={`${import.meta.env.BASE_URL}Chandrabhan_Resume.pdf`} download>
-                <Download className="w-4 h-4" />
+                <Download className="w-4 h-4 text-primary-foreground" />
                 Resume
               </a>
             </Button>
@@ -115,7 +115,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-foreground hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded"
+            className="lg:hidden p-2 text-primary hover:bg-white/50 hover:backdrop-blur-md hover:border hover:border-primary/30 transition-all rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             aria-label="Toggle menu"
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
@@ -154,7 +154,7 @@ const Navbar = () => {
             <div className="flex gap-3 pt-4">
               <Button variant="hero" size="default" className="flex-1" asChild>
                 <a href={`${import.meta.env.BASE_URL}Chandrabhan_Resume.pdf`} download>
-                  <Download className="w-4 h-4" />
+                  <Download className="w-4 h-4 text-primary-foreground" />
                   Resume
                 </a>
               </Button>

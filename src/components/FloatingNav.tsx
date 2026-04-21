@@ -52,7 +52,7 @@ const FloatingNav = () => {
           aria-label={`Navigate to ${section.label}`}
         >
           {/* Label tooltip */}
-          <span className="absolute right-8 px-3 py-1.5 rounded-lg bg-card border border-border text-sm font-medium text-foreground opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap shadow-lg translate-x-2 group-hover:translate-x-0">
+          <span className="absolute right-8 px-3 py-1.5 rounded-lg bg-white/60 backdrop-blur-md border border-primary/30 text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap shadow-lg translate-x-2 group-hover:translate-x-0">
             {section.label}
           </span>
           

@@ -62,16 +62,16 @@ const socialLinks = [
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="py-16 md:py-24 lg:py-28 bg-card">
+    <section id="contact" className="py-20 md:py-32 lg:py-40 bg-card/30 backdrop-blur-sm">
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
         <ScrollReveal>
-          <div className="text-center mb-14 md:mb-16">
-            <div className="section-divider" />
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <div className="text-center mb-16 md:mb-20">
+            <div className="section-divider-large" />
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
               Get In <span className="text-gradient">Touch</span>
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl mx-auto text-base leading-relaxed">
               I'm always open to discussing new opportunities, collaborations, or just having a friendly chat
             </p>
           </div>
@@ -92,8 +92,8 @@ const ContactSection = () => {
                     rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                     className="flex items-start gap-4 p-4 rounded-xl section-card-surface border border-border hover:border-primary/30 hover:shadow-card transition-all duration-300 group interactive-card-soft"
                   >
-                    <div className="p-3 rounded-lg bg-accent group-hover:bg-primary transition-colors">
-                      <item.icon className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" />
+                    <div className="p-3 rounded-lg bg-primary transition-colors">
+                      <item.icon className="w-5 h-5 text-white" />
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">{item.label}</p>
@@ -120,8 +120,8 @@ const ContactSection = () => {
                     className="flex items-center justify-between p-4 rounded-xl section-card-surface border border-border hover:border-primary/30 hover:shadow-card transition-all duration-300 group interactive-card-soft"
                   >
                     <div className="flex items-center gap-4">
-                      <div className="p-3 rounded-lg bg-accent group-hover:bg-primary transition-colors">
-                        <item.icon className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" />
+                      <div className="p-3 rounded-lg bg-primary transition-colors">
+                        <item.icon className="w-5 h-5 text-white" />
                       </div>
                       <div>
                         <p className="font-medium text-foreground group-hover:text-primary transition-colors">
@@ -146,7 +146,7 @@ const ContactSection = () => {
                     asChild
                   >
                     <a href="mailto:contact.chandrabhan@gmail.com">
-                      <Mail className="w-4 h-4" />
+                      <Mail className="w-4 h-4 text-primary" />
                       Send Email
                     </a>
                   </Button>
