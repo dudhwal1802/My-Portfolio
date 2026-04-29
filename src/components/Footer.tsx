@@ -2,7 +2,7 @@ import { Github, Linkedin, Mail, Heart } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const lastUpdated = 'April 21, 2026';
+  const lastUpdated = 'April 29, 2026';
 
   return (
     <footer className="py-8 md:py-10 bg-gradient-to-b from-white/30 to-white/10 backdrop-blur-sm border-t border-primary/10">
@@ -22,7 +22,7 @@ const Footer = () => {
             <span>© {currentYear} Chandrabhan</span>
             <span className="text-primary">•</span>
             <span className="flex items-center gap-1">
-              Made with <Heart className="w-3.5 h-3.5 text-primary fill-current" />
+              Crafted with <Heart className="w-3.5 h-3.5 text-primary fill-current" /> & precision
             </span>
           </div>
 
@@ -62,12 +62,7 @@ const Footer = () => {
         {/* Divider */}
         <div className="my-5 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
 
-        {/* Bottom Text */}
-        <div className="text-center">
-          <p className="text-xs text-muted-foreground/80">
-            Designed for professional impact • React • TypeScript • Tailwind CSS
-          </p>
-        </div>
+
       </div>
     </footer>
   );

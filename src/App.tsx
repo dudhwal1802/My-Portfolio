@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import CommandPalette from "@/components/CommandPalette";
 import ThreeDBackground from "@/components/ThreeDBackground";
+import SplashCursor from "@/components/SplashCursor";
 
 const queryClient = new QueryClient();
 
@@ -17,6 +18,23 @@ const routerBasename = import.meta.env.BASE_URL.endsWith("/")
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      <SplashCursor 
+        SIM_RESOLUTION={128}
+        DYE_RESOLUTION={1440}
+        DENSITY_DISSIPATION={3.5}
+        VELOCITY_DISSIPATION={2}
+        PRESSURE={0.1}
+        PRESSURE_ITERATIONS={20}
+        CURL={3}
+        SPLAT_RADIUS={0.25}
+        SPLAT_FORCE={6000}
+        SHADING={true}
+        COLOR_UPDATE_SPEED={10}
+        BACK_COLOR={{ r: 0, g: 0, b: 0 }}
+        TRANSPARENT={true}
+        RAINBOW_MODE={false}
+        COLOR='#7C3AED'
+      />
       <ThreeDBackground />
       <a
         href="#main-content"

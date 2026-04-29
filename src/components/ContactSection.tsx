@@ -138,7 +138,7 @@ const ContactSection = () => {
                 <div className="p-6 rounded-2xl gradient-primary text-primary-foreground mt-8 shadow-card-hover interactive-card">
                   <h4 className="text-lg font-semibold mb-2">Let's Work Together!</h4>
                   <p className="text-primary-foreground/80 mb-4 text-sm">
-                    Looking for an enthusiastic developer or data science intern? I'm ready to contribute and learn.
+                    Ready to collaborate on your next project? I bring expertise in data analysis, analytics solutions, and web development to create impactful digital products.
                   </p>
                   <Button 
                     variant="secondary" 

@@ -7,7 +7,7 @@ import { scrollToHash } from '@/lib/scroll';
 const quickStats = [
   {
     label: 'Current Role',
-    value: 'Data Analyst Intern',
+    value: 'Data Analyst',
     icon: Briefcase,
   },
   {
@@ -50,7 +50,7 @@ const HeroSection = () => {
               </div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 backdrop-blur-md border border-primary/30 text-primary text-sm font-medium interactive-card-soft hover:bg-white/80 hover:border-primary/50 transition-all">
                 <Briefcase className="w-4 h-4 text-primary" />
-                Data Analyst Intern at Uptoskills
+                Data Analyst | Uptoskills
               </div>
             </div>
             
@@ -60,7 +60,7 @@ const HeroSection = () => {
             </h1>
 
             <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-foreground/90 mb-4">
-              MCA Student | Data Analyst Intern | Data-Driven Problem Solver
+              MCA Student | Data Analyst | Data-Driven Problem Solver
             </h2>
             
             <p className="text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8">
