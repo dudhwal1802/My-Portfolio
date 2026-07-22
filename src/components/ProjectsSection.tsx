@@ -72,16 +72,17 @@ const projects = [
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="py-20 md:py-32 lg:py-40 bg-card/40 backdrop-blur-sm">
+    <section id="projects" className="py-24 md:py-32 lg:py-40 bg-card/40 backdrop-blur-sm">
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
         <ScrollReveal>
           <div className="text-center mb-16 md:mb-20">
             <div className="section-divider-large" />
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            <span className="section-kicker">Selected Work</span>
+            <h2 className="section-title text-foreground mb-4">
               Featured <span className="text-gradient">Projects</span>
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-base leading-relaxed">
+            <p className="section-description">
               Showcasing my work and the technologies I've worked with
             </p>
           </div>

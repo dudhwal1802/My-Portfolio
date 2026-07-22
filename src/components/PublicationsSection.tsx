@@ -24,16 +24,17 @@ const researchAreas = ['Kubernetes', 'Cloud Security', 'DevSecOps', 'Container O
 
 const PublicationsSection = () => {
   return (
-    <section id="publications" className="py-20 md:py-32 lg:py-40 bg-background">
+    <section id="publications" className="py-24 md:py-32 lg:py-40 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
         <ScrollReveal>
           <div className="text-center mb-16 md:mb-20">
             <div className="section-divider-large" />
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            <span className="section-kicker">Research Output</span>
+            <h2 className="section-title text-foreground mb-4">
               Research <span className="text-gradient">Publications</span>
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-base leading-relaxed">
+            <p className="section-description">
               Peer-reviewed research contributions in cloud-native infrastructure and security
             </p>
           </div>

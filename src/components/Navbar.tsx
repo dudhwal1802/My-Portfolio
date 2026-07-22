@@ -61,25 +61,33 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled || isOpen
-          ? 'bg-card/95 backdrop-blur-xl shadow-elevated border-b border-border'
+          ? 'bg-white/80 backdrop-blur-2xl shadow-[0_16px_40px_rgba(124,58,237,0.10)] border-b border-primary/10'
           : 'bg-transparent'
       }`}
       aria-label="Primary"
     >
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className={`flex items-center justify-between h-16 md:h-20 ${scrolled || isOpen ? 'md:px-4' : ''}`}>
           {/* Logo */}
           <a
             href="#home"
             onClick={handleNavClick('#home')}
-            className="text-xl md:text-2xl font-bold text-foreground hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded"
+            className="group flex items-center gap-3 text-xl md:text-2xl font-bold text-foreground hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-full"
           >
-            Chandrabhan<span className="text-primary">.</span>
+            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-[0_12px_28px_rgba(124,58,237,0.18)] transition-transform group-hover:scale-105">
+              C
+            </span>
+            <span className="leading-none">
+              Chandrabhan<span className="text-primary">.</span>
+              <span className="hidden sm:block text-[11px] font-medium uppercase tracking-[0.24em] text-muted-foreground mt-1">
+                Research Analyst
+              </span>
+            </span>
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
-            <div className="flex items-center gap-6">
+          <div className="hidden xl:flex items-center gap-4">
+            <div className="flex items-center gap-2 rounded-full border border-primary/10 bg-white/55 backdrop-blur-md px-3 py-2 shadow-sm">
               {navLinks.map((link) => (
                 (() => {
                   const id = link.href.replace('#', '');
@@ -90,22 +98,19 @@ const Navbar = () => {
                   href={link.href}
                   onClick={handleNavClick(link.href)}
                   aria-current={isActive ? 'page' : undefined}
-                  className={`font-medium transition-colors relative group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded ${
-                    isActive ? 'text-primary' : 'text-muted-foreground hover:text-primary'
+                  className={`relative rounded-full px-3 py-2 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
+                    isActive
+                      ? 'bg-primary text-primary-foreground shadow-sm'
+                      : 'text-muted-foreground hover:text-primary hover:bg-primary/5'
                   }`}
                 >
                   {link.label}
-                  <span
-                    className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ${
-                      isActive ? 'w-full' : 'w-0 group-hover:w-full'
-                    }`}
-                  />
                 </a>
                   );
                 })()
               ))}
             </div>
-            <Button variant="hero" size="default" asChild>
+            <Button variant="hero" size="default" className="shadow-[0_16px_36px_rgba(124,58,237,0.18)]" asChild>
               <a href={`${import.meta.env.BASE_URL}Chandrabhan_Resume.pdf`} download>
                 <Download className="w-4 h-4 text-primary-foreground" />
                 Resume
@@ -116,7 +121,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-primary hover:bg-white/50 hover:backdrop-blur-md hover:border hover:border-primary/30 transition-all rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            className="lg:hidden p-2.5 text-primary hover:bg-white/70 hover:backdrop-blur-md hover:border hover:border-primary/20 transition-all rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background shadow-sm"
             aria-label="Toggle menu"
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
@@ -132,7 +137,7 @@ const Navbar = () => {
             isOpen ? 'max-h-screen pb-6' : 'max-h-0'
           }`}
         >
-          <div className="flex flex-col gap-4 pt-4 border-t border-border bg-card/95 backdrop-blur-md">
+          <div className="mt-3 flex flex-col gap-3 rounded-3xl border border-primary/10 bg-white/80 backdrop-blur-2xl p-4 shadow-[0_16px_36px_rgba(124,58,237,0.10)]">
             {navLinks.map((link) => (
               (() => {
                 const id = link.href.replace('#', '');
@@ -143,8 +148,10 @@ const Navbar = () => {
                 href={link.href}
                 onClick={handleNavClick(link.href)}
                 aria-current={isActive ? 'page' : undefined}
-                className={`font-medium transition-colors py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded ${
-                  isActive ? 'text-primary' : 'text-muted-foreground hover:text-primary'
+                className={`rounded-2xl px-4 py-3 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
+                  isActive
+                    ? 'bg-primary text-primary-foreground shadow-sm'
+                    : 'text-muted-foreground hover:text-primary hover:bg-primary/5'
                 }`}
               >
                 {link.label}
@@ -152,7 +159,7 @@ const Navbar = () => {
                 );
               })()
             ))}
-            <div className="flex gap-3 pt-4">
+            <div className="flex gap-3 pt-2">
               <Button variant="hero" size="default" className="flex-1" asChild>
                 <a href={`${import.meta.env.BASE_URL}Chandrabhan_Resume.pdf`} download>
                   <Download className="w-4 h-4 text-primary-foreground" />

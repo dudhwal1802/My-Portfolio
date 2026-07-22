@@ -2,7 +2,7 @@ import { Github, Linkedin, Mail, Heart } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const lastUpdated = 'April 29, 2026';
+  const lastUpdated = 'July 22, 2026';
 
   return (
     <footer className="py-8 md:py-10 bg-gradient-to-b from-white/30 to-white/10 backdrop-blur-sm border-t border-primary/10">

@@ -1,3 +1,4 @@
+import { useLayoutEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
@@ -14,6 +15,21 @@ import ScrollProgressBar from '@/components/ScrollProgressBar';
 import BackToTopButton from '@/components/BackToTopButton';
 
 const Index = () => {
+  useLayoutEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const { pathname, search, hash } = window.location;
+    if (hash) {
+      window.history.replaceState(null, '', `${pathname}${search}`);
+    }
+
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       <ScrollProgressBar />

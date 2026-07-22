@@ -6,13 +6,8 @@ const education = [
   {
     degree: 'Master of Computer Applications (MCA)',
     institution: 'Jaipur National University, Jaipur',
-    period: 'July 2024 – On Going',
-    status: 'Currently Pursuing',
-    semesters: [
-      { sem: '1st Semester', sgpa: 8.3 },
-      { sem: '2nd Semester', sgpa: 7.3 },
-      { sem: '3rd Semester', sgpa: 7.9 },
-    ],
+    period: 'July 2024 - June 2026',
+    grade: '75.80%',
   },
   {
     degree: 'Post Graduate Diploma in Computer Applications (PGDCA)',
@@ -30,8 +25,8 @@ const education = [
 
 const academicSnapshot = [
   {
-    label: 'Current Program',
-    value: 'MCA Ongoing',
+    label: 'MCA Score',
+    value: '75.80%',
   },
   {
     label: 'PGDCA Score',
@@ -47,17 +42,18 @@ const AboutSection = () => {
   const [activeEducation, setActiveEducation] = useState<number | null>(null);
 
   return (
-    <section id="about" className="py-20 md:py-32 lg:py-40 bg-card/30 backdrop-blur-sm">
+    <section id="about" className="py-24 md:py-32 lg:py-40 bg-card/30 backdrop-blur-sm">
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
         <ScrollReveal>
           <div className="text-center mb-16 md:mb-20">
             <div className="section-divider-large" />
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            <span className="section-kicker">Who I Am</span>
+            <h2 className="section-title text-foreground mb-4">
               About <span className="text-gradient">Me</span>
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-base leading-relaxed">
-              A dedicated MCA student building a profile at the intersection of data analytics, practical problem solving, and modern technology.
+            <p className="section-description">
+              A dedicated MCA graduate building a profile at the intersection of data analytics, practical problem solving, and modern technology.
             </p>
           </div>
         </ScrollReveal>
@@ -74,21 +70,21 @@ const AboutSection = () => {
 
                 <div className="prose prose-lg max-w-none space-y-4">
                   <p className="text-muted-foreground leading-relaxed">
-                    I'm Chandrabhan, a Master of Computer Applications student at Jaipur National University.
-                    With a strong foundation in computer applications and a keen interest in data science and web development,
-                    I'm constantly exploring new technologies to enhance my skills.
+                    I'm Chandrabhan, a Master of Computer Applications graduate from Jaipur National University.
+                    With a strong foundation in computer applications and a current role as a Research Analyst at Arcgate Technologies,
+                    I'm constantly exploring new technologies to strengthen my analytics and reporting skills.
                   </p>
                   <p className="text-muted-foreground leading-relaxed">
                     My journey in technology began with my PGDCA where I discovered my passion for programming and data analysis.
                     I enjoy building responsive web applications and working with data to derive meaningful insights.
                   </p>
                   <p className="text-muted-foreground leading-relaxed">
-                    Currently, as a Data Analyst Intern at Uptoskills, I am sharpening my analytical thinking by working on data cleaning,
-                    reporting, and insight generation. I enjoy translating complex datasets into simple stories that support smarter
-                    decisions and reveal meaningful business trends.
+                    Currently, as a Research Analyst at Arcgate Technologies, Udaipur (since May 2026), I am sharpening my analytical
+                    thinking by working on data cleaning, reporting, and insight generation. I enjoy translating complex datasets into
+                    simple stories that support smarter decisions and reveal meaningful business trends.
                   </p>
                   <p className="text-muted-foreground leading-relaxed">
-                    I am focused on building a strong foundation in data analytics through real-world practice, project work, and continuous learning.
+                    I am focused on building a strong foundation in research analysis, reporting clarity, and data-driven decision-making through real-world practice, project work, and continuous learning.
                     My goal is to combine analytical thinking, reporting clarity, and technical execution to create solutions that are both useful and easy to understand.
                   </p>
                 </div>
@@ -140,7 +136,7 @@ const AboutSection = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">Current Role</h4>
-                    <p className="text-sm text-muted-foreground">Data Analyst Intern at Uptoskills since Jan 2026</p>
+                    <p className="text-sm text-muted-foreground">Research Analyst at Arcgate Technologies, Udaipur since May 2026</p>
                   </div>
                 </div>
               </div>

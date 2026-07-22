@@ -22,6 +22,8 @@ export default function IntroSearchOverlay({
   onDone,
 }: IntroSearchOverlayProps) {
   const [visible, setVisible] = React.useState(false);
+  const [entered, setEntered] = React.useState(false);
+  const [exiting, setExiting] = React.useState(false);
   const [typed, setTyped] = React.useState("");
   const [phase, setPhase] = React.useState<"typing" | "loading">("typing");
   const [progress, setProgress] = React.useState(0);
@@ -34,6 +36,13 @@ export default function IntroSearchOverlay({
       setVisible(true);
     }
   }, [storageKey]);
+
+  React.useEffect(() => {
+    if (!visible) return;
+
+    const frame = window.requestAnimationFrame(() => setEntered(true));
+    return () => window.cancelAnimationFrame(frame);
+  }, [visible]);
 
   React.useEffect(() => {
     if (!visible) return;
@@ -55,15 +64,21 @@ export default function IntroSearchOverlay({
     let typingTimer: number | undefined;
     let loadingTimer: number | undefined;
     let doneTimer: number | undefined;
+    let exitTimer: number | undefined;
 
     const finish = () => {
       try {
         localStorage.setItem(storageKey, "1");
       } catch {
-        // ignore
+        // ignore storage failures
       }
-      setVisible(false);
-      onDone?.();
+      setExiting(true);
+      exitTimer = window.setTimeout(() => {
+        setVisible(false);
+        setEntered(false);
+        setExiting(false);
+        onDone?.();
+      }, 220);
     };
 
     if (reduced) {
@@ -73,6 +88,7 @@ export default function IntroSearchOverlay({
       doneTimer = window.setTimeout(finish, 250);
       return () => {
         if (doneTimer) window.clearTimeout(doneTimer);
+        if (exitTimer) window.clearTimeout(exitTimer);
       };
     }
 
@@ -106,20 +122,30 @@ export default function IntroSearchOverlay({
       if (typingTimer) window.clearInterval(typingTimer);
       if (loadingTimer) window.clearInterval(loadingTimer);
       if (doneTimer) window.clearTimeout(doneTimer);
+      if (exitTimer) window.clearTimeout(exitTimer);
     };
   }, [visible, query, storageKey, totalDurationMs, onDone]);
 
   if (!visible) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] bg-background/95 backdrop-blur-sm flex items-center justify-center px-4">
-      <div className="w-full max-w-2xl">
+    <div
+      className={`fixed inset-0 z-[100] flex items-center justify-center px-4 bg-background/90 backdrop-blur-md transition-opacity duration-300 ${
+        entered && !exiting ? "opacity-100" : "opacity-0"
+      }`}
+      aria-hidden={!visible}
+    >
+      <div
+        className={`w-full max-w-2xl transition-all duration-300 ${
+          entered && !exiting ? "translate-y-0 scale-100" : "translate-y-2 scale-[0.985]"
+        }`}
+      >
         <div className="text-center mb-6">
           <div className="text-2xl md:text-3xl font-bold text-foreground">Search</div>
           <div className="text-sm text-muted-foreground mt-1">Finding Chandrabhan’s portfolio…</div>
         </div>
 
-        <Card className="rounded-2xl border border-border bg-card">
+        <Card className="rounded-2xl border border-border/80 bg-card/95 shadow-[0_18px_50px_rgba(124,58,237,0.14)]">
           <div className="px-5 py-4">
             <div className="flex items-center gap-3">
               <div className="h-2 w-2 rounded-full bg-primary" aria-hidden="true" />

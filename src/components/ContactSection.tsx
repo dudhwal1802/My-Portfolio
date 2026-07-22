@@ -62,16 +62,17 @@ const socialLinks = [
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="py-20 md:py-32 lg:py-40 bg-card/30 backdrop-blur-sm">
+    <section id="contact" className="py-24 md:py-32 lg:py-40 bg-card/30 backdrop-blur-sm">
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
         <ScrollReveal>
           <div className="text-center mb-16 md:mb-20">
             <div className="section-divider-large" />
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            <span className="section-kicker">Let's Connect</span>
+            <h2 className="section-title text-foreground mb-4">
               Get In <span className="text-gradient">Touch</span>
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-base leading-relaxed">
+            <p className="section-description">
               I'm always open to discussing new opportunities, collaborations, or just having a friendly chat
             </p>
           </div>
@@ -138,7 +139,7 @@ const ContactSection = () => {
                 <div className="p-6 rounded-2xl gradient-primary text-primary-foreground mt-8 shadow-card-hover interactive-card">
                   <h4 className="text-lg font-semibold mb-2">Let's Work Together!</h4>
                   <p className="text-primary-foreground/80 mb-4 text-sm">
-                    Ready to collaborate on your next project? I bring expertise in data analysis, analytics solutions, and web development to create impactful digital products.
+                    Ready to collaborate on your next project? I bring expertise in research analysis, reporting, data insights, and web development to create impactful digital products.
                   </p>
                   <Button 
                     variant="secondary" 

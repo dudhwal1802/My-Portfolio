@@ -7,7 +7,7 @@ import { scrollToHash } from '@/lib/scroll';
 const quickStats = [
   {
     label: 'Current Role',
-    value: 'Data Analyst',
+    value: 'Research Analyst',
     icon: Briefcase,
   },
   {
@@ -22,7 +22,7 @@ const quickStats = [
   },
   {
     label: 'Academic Track',
-    value: 'MCA Ongoing',
+    value: 'MCA 75.80%',
     icon: GraduationCap,
   },
 ];
@@ -31,13 +31,13 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center gradient-hero pt-20 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center gradient-hero pt-24 lg:pt-28 overflow-hidden"
     >
       {/* Animated Background */}
       <AnimatedBackground />
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 md:gap-16 lg:gap-20">
+        <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 md:gap-16 lg:gap-20">
           {/* Text Content */}
           <div className="flex-1 text-center lg:text-left opacity-0 animate-fade-up">
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-6">
@@ -46,11 +46,11 @@ const HeroSection = () => {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
                 </span>
-                Open to Work
+                Currently Working at Arcgate Technologies
               </div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 backdrop-blur-md border border-primary/30 text-primary text-sm font-medium interactive-card-soft hover:bg-white/80 hover:border-primary/50 transition-all">
                 <Briefcase className="w-4 h-4 text-primary" />
-                Data Analyst | Uptoskills
+                Research Analyst | Arcgate Technologies, Udaipur
               </div>
             </div>
             
@@ -60,15 +60,15 @@ const HeroSection = () => {
             </h1>
 
             <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-foreground/90 mb-4">
-              MCA Student | Data Analyst | Data-Driven Problem Solver
+              MCA Graduate | Research Analyst | Data-Driven Problem Solver
             </h2>
             
             <p className="text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8">
-              I build practical digital solutions and work with data to uncover patterns, improve clarity, and support better decisions. Based in Rajasthan, India.
+              I build practical digital solutions and work with research, reporting, and data to uncover patterns, improve clarity, and support better decisions. Based in Rajasthan, India.
             </p>
 
             <p className="text-base text-muted-foreground/90 max-w-2xl mx-auto lg:mx-0 mb-8 leading-relaxed">
-              My portfolio combines analytics-focused thinking, web project execution, and continuous learning in areas like reporting, machine learning, and responsive product building.
+              My portfolio combines research analysis, analytics-focused thinking, web project execution, and continuous learning in areas like reporting, machine learning, and responsive product building.
             </p>
 
             {/* CTA Buttons */}
@@ -170,21 +170,23 @@ const HeroSection = () => {
 
           {/* Profile Image */}
           <div className="flex-shrink-0 opacity-0 animate-scale-in stagger-2">
-            <div className="relative animate-float-soft">
-              {/* Glass morphism glow - subtle purple */}
-              <div className="absolute -inset-4 rounded-full bg-primary/10 blur-2xl" />
-              <div className="absolute -inset-2 rounded-full border border-primary/20 backdrop-blur-sm" />
-              
-              <img
-                src={profilePhoto}
-                alt="Chandrabhan - MCA Student & Developer"
-                width={384}
-                height={384}
-                loading="eager"
-                fetchpriority="high"
-                decoding="async"
-                className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full object-cover border-4 border-primary/30 shadow-lg"
-              />
+            <div className="relative mx-auto lg:mx-0 animate-float-soft">
+              <div className="absolute inset-0 -translate-x-2 translate-y-4 rounded-[2rem] bg-primary/10 blur-3xl" />
+              <div className="relative rounded-[2rem] border border-primary/15 bg-white/60 backdrop-blur-md p-4 shadow-[0_22px_50px_rgba(124,58,237,0.12)]">
+                <div className="absolute -right-3 top-6 z-10 rounded-full bg-white/80 backdrop-blur-md px-4 py-2 text-xs font-semibold text-primary border border-primary/20 shadow-sm">
+                  Research Analyst
+                </div>
+                <img
+                  src={profilePhoto}
+                  alt="Chandrabhan - MCA Graduate & Developer"
+                  width={384}
+                  height={384}
+                  loading="eager"
+                  fetchpriority="high"
+                  decoding="async"
+                  className="relative w-64 h-64 md:w-80 md:h-80 lg:w-[24rem] lg:h-[24rem] rounded-[1.5rem] object-cover border border-white/60 shadow-lg"
+                />
+              </div>
             </div>
           </div>
         </div>

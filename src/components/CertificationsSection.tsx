@@ -33,16 +33,17 @@ const learningAreas = ['AI', 'Linux', 'Excel', 'Applied Learning', 'Continuous U
 
 const CertificationsSection = () => {
   return (
-    <section id="certifications" className="py-20 md:py-32 lg:py-40 bg-background">
+    <section id="certifications" className="py-24 md:py-32 lg:py-40 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
         <ScrollReveal>
           <div className="text-center mb-16 md:mb-20">
             <div className="section-divider-large" />
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            <span className="section-kicker">Learning Path</span>
+            <h2 className="section-title text-foreground mb-4">
               My <span className="text-gradient">Certifications</span>
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-base leading-relaxed">
+            <p className="section-description">
               Continuous learning and professional development through recognized certifications
             </p>
           </div>

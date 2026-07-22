@@ -9,14 +9,14 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary/90 backdrop-blur-sm border border-primary/30 text-primary-foreground hover:bg-primary shadow-md hover:-translate-y-0.5 hover:shadow-elevated hover:border-primary/50",
+        default: "bg-primary/95 backdrop-blur-sm border border-primary/25 text-primary-foreground shadow-md hover:bg-primary hover:-translate-y-0.5 hover:shadow-[0_16px_40px_rgba(124,58,237,0.18)] hover:border-primary/40",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-md hover:shadow-lg",
-        outline: "border-2 border-primary/60 bg-white/50 backdrop-blur-md text-primary hover:bg-white/70 hover:-translate-y-0.5 hover:shadow-lifted hover:border-primary/80",
-        secondary: "bg-white/40 backdrop-blur-md border border-primary/20 text-secondary-foreground hover:bg-white/60 shadow-sm hover:shadow-md hover:-translate-y-0.5",
+        outline: "border border-primary/35 bg-white/60 backdrop-blur-md text-primary hover:bg-white/80 hover:-translate-y-0.5 hover:shadow-[0_14px_34px_rgba(124,58,237,0.12)] hover:border-primary/60",
+        secondary: "bg-white/50 backdrop-blur-md border border-primary/15 text-secondary-foreground hover:bg-white/80 shadow-sm hover:shadow-md hover:-translate-y-0.5",
         ghost: "hover:bg-primary/10 hover:text-primary text-foreground transition-colors",
         link: "text-primary underline-offset-4 hover:underline font-medium",
-        hero: "bg-primary/95 backdrop-blur-sm border border-primary/40 text-primary-foreground shadow-lg hover:shadow-lifted hover:-translate-y-1 font-bold uppercase tracking-wide hover:bg-primary hover:border-primary/60 hover:shadow-[0_0_30px_rgba(124,58,237,0.3)]",
-        social: "bg-white/60 backdrop-blur-md border border-primary/30 text-primary hover:bg-white/80 hover:border-primary/60 shadow-soft hover:-translate-y-0.5 hover:shadow-md transition-all",
+        hero: "bg-gradient-to-r from-primary via-fuchsia-600 to-primary backdrop-blur-sm border border-primary/40 text-primary-foreground shadow-lg hover:shadow-[0_22px_50px_rgba(124,58,237,0.22)] hover:-translate-y-1 font-bold uppercase tracking-wide hover:border-primary/60",
+        social: "bg-white/70 backdrop-blur-md border border-primary/20 text-primary hover:bg-white hover:border-primary/45 shadow-soft hover:-translate-y-0.5 hover:shadow-[0_12px_28px_rgba(124,58,237,0.12)] transition-all",
       },
       size: {
         default: "h-10 px-5 py-2",
